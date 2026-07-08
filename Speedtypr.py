@@ -5,7 +5,15 @@ with open("words.txt", "r", encoding="utf-8") as file:
     commands = [line.strip() for line in file.readlines()]
 
 completed = []
-words = input("How many words do you want to type? \n")
+y = False
+while y == False:
+    words = input("How many words do you want to type? \n")
+    if words.isdigit() and int(words) > 0:
+        y = True
+    else:
+        print("Please enter a valid number.")
+        continue 
+
 wdone = 0
 mistakes = 0
 
